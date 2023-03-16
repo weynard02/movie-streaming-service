@@ -10,7 +10,7 @@ class Watchlist extends Model
     use HasFactory;
 
     protected $table = "watchlists";
-    protected $fillable = ['usermade_id', 'movie_id', 'order'];
+    protected $fillable = ['user_id', 'movie_id', 'order'];
 
     public function usermade() {
         return $this->belongsToMany(Usermade::class);

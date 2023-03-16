@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('watchlists', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usermade_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->foreignId('movie_id')->constrained();
             $table->integer('order');
             $table->timestamps();
