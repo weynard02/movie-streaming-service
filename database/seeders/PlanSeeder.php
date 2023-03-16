@@ -16,8 +16,8 @@ class PlanSeeder extends Seeder
         // id
         // name
         // price
-        $plan = array("free", "paid");
-        $price = array(0, 17500);
+        $plan = array("free", "paid", "admin");
+        $price = array(0, 17500, 0);
         $len = count($plan);
         for($i=0;$i<$len;$i++) {
             \App\Models\Plan::create([

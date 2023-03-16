@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('release_date');
             $table->string('image');
             $table->boolean('paid');
+            $table->string('tags');
             $table->timestamps();
         });
     }

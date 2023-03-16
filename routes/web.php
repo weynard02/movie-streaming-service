@@ -17,3 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//route awal sementara
+//ke depannya, menggunakan perantara controller
+Route::get('/my', function () {
+    return view('dashboard.index');
+});
+

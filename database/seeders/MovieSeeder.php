@@ -25,6 +25,7 @@ class MovieSeeder extends Seeder
         $release_date = array("2017-07-07", "2012-05-04");
         $image = array("public/images/homecoming.jpeg", "public/images/avengers.jpeg");
         $paid = array(0, 1);
+        $tags = array("marvel,action,spiderman,tom holland,mcu", "marvel,action,avengers,mcu,robert,rdj");
         $len = count($movie);
         for($i=0;$i<$len;$i++) {
             \App\Models\Movie::create([
@@ -33,7 +34,8 @@ class MovieSeeder extends Seeder
                 'studio' => $studio[$i],
                 'release_date' => $release_date[$i],
                 'image' => $image[$i],
-                'paid' => $paid[$i]
+                'paid' => $paid[$i],
+                'tags' => $tags[$i]
             ]);
         }
     }
