@@ -23,6 +23,11 @@
             <li><a class="dropdown-item" href="#">Comedy</a></li>
           </ul>
         </li>
+        <!-- @if(session('admin')) -->
+        <li class="nav-item">
+          <a class="nav-link">Admin</a>
+        </li>
+        <!-- @endif -->
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
