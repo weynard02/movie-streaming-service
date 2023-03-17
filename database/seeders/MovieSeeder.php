@@ -23,7 +23,7 @@ class MovieSeeder extends Seeder
         $link = array("https://www.youtube.com/watch?v=rk-dF1lIbIg", "https://www.youtube.com/watch?v=eOrNdBpGMv8");
         $studio = array("SONY", "Marvel Studios");
         $release_date = array("2017-07-07", "2012-05-04");
-        $image = array("public/images/homecoming.jpeg", "public/images/avengers.jpeg");
+        $image = array("images/homecoming.jpg", "images/avengers.jpg");
         $paid = array(0, 1);
         $tags = array("marvel,action,spiderman,tom holland,mcu", "marvel,action,avengers,mcu,robert,rdj");
         $len = count($movie);
