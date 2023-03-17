@@ -12,10 +12,10 @@ class Movie extends Model
     protected $fillable = ['name', 'link', 'studio', 'release_date', 'image', 'paid'];
 
     public function artist() {
-        return $this->belongsToMany(artist::class);
+        return $this->belongsToMany(artist::class, 'artist_movies');
     }
 
     public function genre() {
-        return $this->belongsToMany(genre::class);
+        return $this->belongsToMany(genre::class, 'genre_movies');
     }
 }

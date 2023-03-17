@@ -12,6 +12,6 @@ class Artist extends Model
     protected $fillable = ['name', 'birthdate'];
 
     public function movie() {
-        return $this->belongsToMany(Movie::class);
+        return $this->belongsToMany(Movie::class, 'artist_movies');
     }
 }
