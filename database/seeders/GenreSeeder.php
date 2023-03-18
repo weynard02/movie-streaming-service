@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Genre;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -18,7 +20,7 @@ class GenreSeeder extends Seeder
         $genre = array("action", "adventure", "marvel", "sci-fi", "dc", "romance", "comedy");
         $len = count($genre);
         for($i=0;$i<$len;$i++) {
-            \App\Models\Genre::create([
+            Genre::create([
                 'name' => $genre[$i]
             ]);
         }

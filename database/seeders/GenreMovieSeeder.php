@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\genre_movie;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,7 +19,7 @@ class GenreMovieSeeder extends Seeder
 
         $len = count($genre);
         for($i=0;$i<$len;$i++) {
-            \App\Models\genre_movie::create([
+            genre_movie::create([
                 'genre_id' => $genre[$i],
                 'movie_id' => $movie[$i]
             ]);

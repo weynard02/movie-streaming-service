@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Movie;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -28,7 +30,7 @@ class MovieSeeder extends Seeder
         $tags = array("marvel,action,spiderman,tom holland,mcu", "marvel,action,avengers,mcu,robert,rdj");
         $len = count($movie);
         for($i=0;$i<$len;$i++) {
-            \App\Models\Movie::create([
+            Movie::create([
                 'name' => $movie[$i],
                 'link' => $link[$i],
                 'studio' => $studio[$i],

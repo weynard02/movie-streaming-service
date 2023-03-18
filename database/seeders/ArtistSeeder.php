@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Artist;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +18,7 @@ class ArtistSeeder extends Seeder
         $birthdate = array("1965-04-04", "1996-06-01", "1981-06-13", "1976-07-19", "1984-11-22", "1983-08-11");
         $len = count($artist);
         for($i=0;$i<$len;$i++) {
-            \App\Models\Artist::create([
+            Artist::create([
                 'name' => $artist[$i],
                 'birthdate' => $birthdate[$i]
             ]);

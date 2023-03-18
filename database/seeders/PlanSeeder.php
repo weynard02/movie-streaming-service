@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Plan;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,7 +22,7 @@ class PlanSeeder extends Seeder
         $price = array(0, 17500, 0);
         $len = count($plan);
         for($i=0;$i<$len;$i++) {
-            \App\Models\Plan::create([
+            Plan::create([
                 'name' => $plan[$i],
                 'price' => $price[$i]
             ]);

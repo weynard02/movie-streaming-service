@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\artist_movie;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +18,7 @@ class ArtistMovieSeeder extends Seeder
         $artist = array(1,2,1,2);
         $len = count($movie);
         for($i=0;$i<$len;$i++) {
-            \App\Models\artist_movie::create([
+            artist_movie::create([
                 'artist_id' => $artist[$i],
                 'movie_id' => $movie[$i]
             ]);
