@@ -25,4 +25,6 @@ Route::get('/my', function () {
 });
 
 Route::get('/admin', [AdminController::class, 'index']);
-
+Route::get('/admin/create', [AdminController::class, 'create']);
+Route::post('/admin', [AdminController::class, 'store']);
+Route::delete('/admin/{movie_id}', [AdminController::class, 'destroy']);
