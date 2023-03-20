@@ -14,14 +14,14 @@
         @foreach($movies as $i)
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="{{ asset('storage/'.$i->image) }}" class="card-img-top" height=400>
+                <img src="{{ asset('storage/'.$i->image) }}" alt="{{ asset('images/alt.png') }}" class="card-img-top" height=400>
                 <div class="card-body">
                     <h5 class="card-title">{{ $i->name }}</h5>
                     <p class="card-text">{{ $i->studio }}</p>
                     <form action='/admin/{{$i->id}}' method="post" enctype="multipart/form-data">
                         @csrf
                         @method('delete')
-                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="/admin/{{$i->id}}" class="btn btn-primary">View</a>
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </div>
