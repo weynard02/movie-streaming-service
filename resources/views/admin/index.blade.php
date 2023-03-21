@@ -9,6 +9,10 @@
     <div class="row">
         <a class="btn btn-info" href="/admin/create"> Add Movie </a>
     </div>
+    <br>
+    <div class="row">
+        <a class="btn btn-warning" href="/admin/artist"> Artists Menu </a>
+    </div>
     <br><br>
     <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach($movies as $i)

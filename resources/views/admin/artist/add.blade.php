@@ -4,8 +4,8 @@
     <h1 align=center> Add Cast </h1>
     @if(session('errormes'))
     <div class="alert alert-danger">
-			{{ session('errormes') }}
-		</div>
+		{{ session('errormes') }}
+	</div>
     @endif
     <form action="/admin/artist/{{$movie->id}}" method="post" enctype="multipart/form-data">
         @csrf

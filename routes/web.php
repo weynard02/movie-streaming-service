@@ -28,11 +28,18 @@ Route::get('/my', function () {
 
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/create', [AdminController::class, 'create']);
+Route::get('/admin/artist', [ArtistController::class, 'index']);
+
 Route::post('/admin', [AdminController::class, 'store']);
 Route::get('/admin/{movie_id}', [AdminController::class, 'show']);
 Route::delete('/admin/{movie_id}', [AdminController::class, 'destroy']);
 Route::get('/admin/{movie_id}/edit', [AdminController::class, 'edit']);
 Route::put('/admin/{movie_id}', [AdminController::class, 'update']);
+
+Route::get('/admin/artist/{artist_id}/edit', [ArtistController::class, 'edit']);
+Route::put('/admin/artist/{artist_id}', [ArtistController::class, 'update']);
+Route::delete('/admin/artist/{artist_id}', [ArtistController::class, 'destroy']);
+
 Route::get('/admin/artist/{movie_id}', [ArtistController::class, 'create']);
 Route::post('/admin/artist/{movie_id}', [ArtistController::class, 'store']);
 Route::delete('/admin/artist/{movie_id}/{cast_id}', [ArtistController::class, 'destroyPivot']);

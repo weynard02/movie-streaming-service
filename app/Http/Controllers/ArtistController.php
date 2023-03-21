@@ -14,7 +14,8 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        
+        $artists = Artist::all();
+        return view('admin.artist.index', compact('artists'));
     }
 
     /**
@@ -89,25 +90,47 @@ class ArtistController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Artist $artist)
+    public function edit($id)
     {
-        //
+        $artist = Artist::findorfail($id);
+
+        return view('admin.artist.edit', compact('artist'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Artist $artist)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'date' => 'required'
+        ],
+        [
+            'name.required' => 'Name can\'t be empty',
+            'date.required' => 'Birthdate can\'t be empty'
+        ]);
+
+        $artist = Artist::findorfail($id);
+
+        $artist->update([
+            'name' => $request->name,
+            'birthdate' => $request->date
+        ]);
+
+        return redirect('/admin/artist')->with('pesan', 'Artist edited successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Artist $artist)
+    public function destroy($id)
     {
-        //
+        $artist = Artist::findorfail($id);
+        $artist->movie()->detach();
+        $artist->delete();
+
+        return redirect('/admin/artist')->with('pesan', 'Artist deleted successfully');
     }
 
     public function destroyPivot($movie_id, $cast_id)
