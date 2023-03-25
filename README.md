@@ -9,6 +9,9 @@ Aplikasi Laravel ini merupakan aplikasi layanan streaming movie yang di mana use
 
 
 ## Petunjuk Penggunaan:
+1. melakukan `php artisan serve` untuk mendapatkan localhost
+2. melakukan `php artisan storage:link` untuk menghubungkan storage
+
 
 
 
@@ -18,10 +21,12 @@ Aplikasi Laravel ini merupakan aplikasi layanan streaming movie yang di mana use
 ![image](https://user-images.githubusercontent.com/90879937/227697700-148928a5-7187-441b-9911-19e5ea8022c9.png)
 
 2. Kemudian menemukan halaman sebagai berikut\
-![image](https://user-images.githubusercontent.com/90879937/227697722-b1cba603-d8c5-4b23-9323-64c679320554.png)
+![image](https://user-images.githubusercontent.com/90879937/227715457-c83f3162-342d-43b4-983a-6c0f7f1906f1.png)
+
 
 Ada beberapa fitur yang bisa diakses:
 <ol>
+    <li> <b>Search bar</b>: mencari movie </li>
     <li> <b>Add Movie</b>: digunakan untuk menambahkan movie </li>
     <li> <b>Artist Menu</b>: menampilkan semua artist </li>
     <li> <b>View</b>: menampilkan movie secara detail </li>
@@ -36,10 +41,9 @@ Ada beberapa fitur yang bisa diakses:
 
 ### Arist Menu
 Untuk menampilkan artist dengan birthdatenya. Admin dapat mengedit nama atau birthdate serta menghapus artist tersebut dari database (*Jika artist tersebut terdaftar dalam movie, maka data artist tersebut hilang dari movie itu*)
-![image](https://user-images.githubusercontent.com/90879937/227698097-973133a5-53cb-4454-9beb-ad6924e13031.png)
+![image](https://user-images.githubusercontent.com/90879937/227715485-38448f7e-4533-4c67-b218-3a75eafb06a6.png)
 Edit Artist:
 ![image](https://user-images.githubusercontent.com/90879937/227698105-cd67a881-183f-4f81-a500-19e656b1dda8.png)
-
 
 ### View
 Menampilkan movie tersebut serta beberapa detail lengkapnya seperti tags, para cast, dan genre-genrenya.
