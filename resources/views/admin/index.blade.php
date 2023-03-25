@@ -6,14 +6,28 @@
 			{{ session('pesan') }}
 		</div>
 	@endif
-    <div class="row">
-        <a class="btn btn-info" href="/admin/create"> Add Movie </a>
+    <div class="row mb-3 grid gap-0 column-gap-3">
+        <div class="col">
+            <div class="row">
+                <a class="btn btn-info" href="/admin/create"> Add Movie </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <a class="btn btn-warning" href="/admin/artist"> Artists Menu </a>
+            </div>
+        </div>
     </div>
-    <br>
-    <div class="row">
-        <a class="btn btn-warning" href="/admin/artist"> Artists Menu </a>
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <form action="/admin">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search..." name="search" value = "{{ request('search') }}">
+                <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
+            </div>
+            </form>
+        </div>
     </div>
-    <br><br>
     <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach($movies as $i)
         <div class="col">
