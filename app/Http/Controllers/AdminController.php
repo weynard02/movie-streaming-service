@@ -16,9 +16,18 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
+        if (request('search')) {
+            $movies = Movie::where('name', 'like', '%'.request('search').'%')
+                            ->orWhere('tags', 'like', '%'.request('search').'%')
+                            ->get();
+        }
+        else {
+            $movies = Movie::all();
+        }
+
         return view('admin.index', compact('movies'));
     }
+
 
     /**
      * Show the form for creating a new resource.
