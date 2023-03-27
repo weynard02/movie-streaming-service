@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use App\Models\Genre;
-use App\Models\genre_movie;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\Storage;
