@@ -3,6 +3,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Auth\Events\Login;
@@ -20,11 +21,11 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', DashboardController::class);
 
 Route::get('/my', MyController::class);
 
-Route::get('/login', LoginController::class);
+//Route::get('/login', LoginController::class);
 
 
 Route::get('/admin', [AdminController::class, 'index']);
@@ -47,3 +48,7 @@ Route::delete('/admin/artist/{movie_id}/{cast_id}', [ArtistController::class, 'd
 Route::get('/admin/genre/{movie_id}', [GenreController::class, 'create']);
 Route::post('/admin/genre/{movie_id}', [GenreController::class, 'store']);
 Route::delete('/admin/genre/{movie_id}/{genre_id}', [GenreController::class, 'destroyPivot']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
