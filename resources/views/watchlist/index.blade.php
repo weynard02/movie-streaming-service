@@ -23,9 +23,11 @@
                             <div class="ms-2 me-auto">
                                 {{ $movie->name }}
                             </div>
+                            <div class="col-2"></div>
                             <form action='/watchlist/{{ session('user')->id }}/{{ $movie->id }}' method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('delete')
+                                <a href="/movie/{{ $movie->id }}" class="btn btn-primary">View</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Remove</button>
                             </form>
                         </li>
