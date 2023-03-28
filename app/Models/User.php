@@ -49,7 +49,7 @@ class User extends Authenticatable
         return $this->belongsTo(Plan::class);
     }
 
-    public function user() {
-        return $this->belongsToMany(User::class, "watchlists");
+    public function movie() {
+        return $this->belongsToMany(Movie::class, "watchlists");
     }
 }
