@@ -12,10 +12,29 @@ class MovieController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    protected $genresHashMap = [
+        'action' => 1,
+        'adventure' => 2,
+        'marvel' => 3,
+        'sci-fi' => 4,
+        'dc' => 5,
+        'romance' => 6,
+        'comedy' => 7,
+        'anime' => 8
+    ];
+
     public function index()
     {
         if (request('search')) {
             $isSearch = true;
+            $searchQuery = request('search');
+            if (str_contains($searchQuery, 'genre:')) {
+                $genre = Genre::findorfail($this->genresHashMap[str_replace('genre:', '', $searchQuery)]);
+                $movies = $genre->movie;
+                return view('movie.index', compact('isSearch', 'movies'));
+            }
+
             $movies = Movie::where('name', 'like', '%' . request('search') . '%')
                 ->orWhere('tags', 'like', '%' . request('search') . '%')
                 ->get();
