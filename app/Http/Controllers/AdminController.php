@@ -15,6 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
+        if (!session('user') || session('user')->plan_id != 3) return abort('403');        
         if (request('search')) {
             $movies = Movie::where('name', 'like', '%'.request('search').'%')
                             ->orWhere('tags', 'like', '%'.request('search').'%')
@@ -33,6 +34,7 @@ class AdminController extends Controller
      */
     public function create()
     {
+        if (!session('user') || session('user')->plan_id != 3) return abort('403');  
         $movies = Movie::all();
         $artists = Artist::all();
         $genres = Genre::all();
@@ -91,6 +93,7 @@ class AdminController extends Controller
      */
     public function show(string $id)
     {
+        if (!session('user') || session('user')->plan_id != 3) return abort('403');  
         $movie = Movie::findorfail($id);
         $genres = Genre::all();
         $artists = Artist::all();
@@ -103,6 +106,7 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
+        if (!session('user') || session('user')->plan_id != 3) return abort('403');  
         $movie = Movie::findorfail($id);
         return view('admin.edit', compact('movie'));
     }
@@ -158,6 +162,7 @@ class AdminController extends Controller
      */
     public function destroy(string $id)
     {
+        if (!session('user') || session('user')->plan_id != 3) return abort('403');  
         $movies = Movie::findorfail($id);
         if ($movies->image) {
             Storage::delete('public/'.$movies->image);
