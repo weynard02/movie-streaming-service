@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Watchlist</a>
@@ -23,8 +23,13 @@
             <li><a class="dropdown-item" href="#">Comedy</a></li>
           </ul>
         </li>
+        @if(session('user') && session('user')->plan_id == 3)
         <li class="nav-item">
           <a class="nav-link" href="/admin">Admin</a>
+        </li>
+        @endif
+        <li class="nav-item">
+          <a class="btn btn-primary" href="/logout">Logout</a>
         </li>
       </ul>
       @if (true)
@@ -33,6 +38,8 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       @endif
+
+      
     </div>
   </div>
 </nav>

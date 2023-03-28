@@ -6,6 +6,7 @@ use App\Models\User;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -17,7 +18,8 @@ class UserSeeder extends Seeder
         User::create([
             'name' => "admin",
             'email' => "admin@disney-minus-coldmoon.com",
-            'password' => "adminSuperSecretPassword",
+            'password' => bcrypt("12345"),
+            'remember_token' => Str::random(),
             'plan_id' => 3
         ]); 
     }

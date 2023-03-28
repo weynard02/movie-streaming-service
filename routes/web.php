@@ -1,6 +1,8 @@
 <?php
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MyController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\DashboardController;
@@ -8,6 +10,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -20,12 +23,13 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', DashboardController::class);
+Route::get('/formlogin', [AuthController::class, 'login'])->name('login');
+Route::post('/dologin', [AuthController::class, 'dologin']);
+Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/', DashboardController::class)->middleware('auth');
 
 Route::get('/my', MyController::class);
 
-//Route::get('/login', LoginController::class);
 
 
 Route::get('/admin', [AdminController::class, 'index']);
@@ -52,3 +56,4 @@ Route::delete('/admin/genre/{movie_id}/{genre_id}', [GenreController::class, 'de
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

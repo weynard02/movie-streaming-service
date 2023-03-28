@@ -1,9 +1,15 @@
 @extends('master')
 @section('content')
-    <div class="container-fluid p-5">
+    <div class="container-fluid">
+        @if (session('pesan'))
+        <div class="alert alert-success">
+            {{ session('pesan') }}
+        </div>
+        @endif
         @if ($isSearch)
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @foreach ($movies as $i)
+                @if(session('user') && session('user')->plan_id == 1 && $i->paid == 1) @continue @endif
                     <div class="col">
                         <div class="card" style="width: 18rem;">
                             <img src="{{ asset('storage/' . $i->image) }}" alt="{{ asset('images/alt.png') }}"
@@ -28,6 +34,7 @@
             </div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @foreach ($newMovies as $movie)
+                @if(session('user') && session('user')->plan_id == 1 && $movie->paid == 1) @continue  @endif
                     <div class="col">
                         <div class="card" style="width: 18rem;">
                             <img src="{{ asset('storage/' . $movie->image) }}" alt="{{ asset('images/alt.png') }}"
@@ -51,6 +58,7 @@
                     <h2 class="heading text-dark">{{ Str::upper($genres[$i]->name) }}</h2>
                 </div>
                 @foreach ($genres[$i]->movie as $movie)
+                @if(session('user') && session('user')->plan_id == 1 && $movie->paid == 1) @continue @endif
                     <div class="col">
                         <div class="card" style="width: 18rem;">
                             <img src="{{ asset('storage/' . $movie->image) }}" alt="{{ asset('images/alt.png') }}"

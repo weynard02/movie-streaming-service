@@ -61,6 +61,28 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Plan') }}</label>
+
+                            <div class="col-md-6">
+                                <?php 
+                                    use App\Models\Plan;
+                                    $plans = Plan::all();
+                                ?>
+                                <select class="form-select form-control" name="plan_id">
+                                    <option selected value="">-</option>
+                                    @foreach ($plans as $item)
+                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                    @endforeach
+                                </select>
+                                @error('plan_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
