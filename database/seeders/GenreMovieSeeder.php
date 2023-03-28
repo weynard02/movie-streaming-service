@@ -14,8 +14,8 @@ class GenreMovieSeeder extends Seeder
      */
     public function run(): void
     {
-        $genre = array(1,2,3,4,7,1,2,3,4);
-        $movie = array(1,1,1,1,1,2,2,2,2);
+        $genre = array(1,2,3,4,7,1,2,3,4,1,2,6,8);
+        $movie = array(1,1,1,1,1,2,2,2,2,3,3,3,3);
 
         $len = count($genre);
         for($i=0;$i<$len;$i++) {

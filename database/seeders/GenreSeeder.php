@@ -17,7 +17,7 @@ class GenreSeeder extends Seeder
         // genres
         // id
         // name
-        $genre = array("action", "adventure", "marvel", "sci-fi", "dc", "romance", "comedy");
+        $genre = array("action", "adventure", "marvel", "sci-fi", "dc", "romance", "comedy", "anime");
         $len = count($genre);
         for($i=0;$i<$len;$i++) {
             Genre::create([
