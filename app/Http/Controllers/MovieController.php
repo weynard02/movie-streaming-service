@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Genre;
+use App\Models\Artist;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -12,7 +14,17 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        if (request('search')) {
+            $isSearch = true;
+            $movies = Movie::where('name', 'like', '%' . request('search') . '%')
+                ->orWhere('tags', 'like', '%' . request('search') . '%')
+                ->get();
+            return view('movie.index', compact('isSearch', 'movies'));
+        } else {
+            $isSearch = false;
+            $movies = Movie::all();
+            return view('movie.index', compact('isSearch', 'movies'));
+        }
     }
 
     /**
@@ -34,9 +46,13 @@ class MovieController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Movie $movie)
+    public function show(string $id)
     {
-        //
+        $movie = Movie::findorfail($id);
+        $genres = Genre::all();
+        $artists = Artist::all();
+
+        return view('movie.show',  compact('movie', 'artists', 'genres'));
     }
 
     /**
