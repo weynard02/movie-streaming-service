@@ -18,7 +18,7 @@ class DashboardController extends Controller
             return view('index', compact('isSearch', 'movies', 'user'));
         } else {
             $isSearch = false;
-            $headers = ['New', 'Action', 'Adventure', 'Marvel', 'Sci-Fi', 'DC', 'Romance', 'Comedy'];
+            $headers = ['New', 'Action', 'Adventure', 'Marvel', 'Sci-Fi', 'DC', 'Romance', 'Comedy', 'Anime'];
             $genres = Genre::all();
             $newMovies = Movie::where('release_date', 'like', date('Y') . '%')->get();
             return view('index', compact('isSearch', 'headers', 'genres', 'newMovies', 'user'));
