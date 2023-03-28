@@ -30,9 +30,10 @@ class MovieController extends Controller
             $isSearch = true;
             $searchQuery = request('search');
             if (str_contains($searchQuery, 'genre:')) {
-                $genre = Genre::findorfail($this->genresHashMap[str_replace('genre:', '', $searchQuery)]);
+                $genreName = str_replace('genre:', '', $searchQuery);
+                $genre = Genre::findorfail($this->genresHashMap[$genreName]);
                 $movies = $genre->movie;
-                return view('movie.index', compact('isSearch', 'movies'));
+                return view('movie.index', compact('isSearch', 'movies', 'genreName'));
             }
 
             $movies = Movie::where('name', 'like', '%' . request('search') . '%')
