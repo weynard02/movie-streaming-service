@@ -27,7 +27,7 @@
                             <form action='/watchlist/{{ session('user')->id }}/{{ $movie->id }}' method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('delete')
-                                <a href="/movie/{{ $movie->id }}" class="btn btn-primary">View</a>
+                                <a href="/movie/{{ $movie->id }}" class="btn btn-primary btn-sm">View</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Remove</button>
                             </form>
                         </li>
