@@ -26,7 +26,7 @@
                 @endforeach
             </div>
         @else
-            <div class="header my-5 bg-dark">
+            <div class="header my-5 py-2 bg-info">
                 <h2 class="heading text-dark">NEW</h2>
             </div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -48,7 +48,7 @@
                 @endforeach
             </div>
             @for ($i = 0; $i < count($genres); $i++)
-                <div class="header my-5 bg-dark">
+                <div class="header my-5 py-2 bg-info">
                     <h2 class="heading text-dark">{{ Str::upper($genres[$i]->name) }}</h2>
                 </div>
                 <div class="row row-cols-1 row-cols-md-4 g-4">
