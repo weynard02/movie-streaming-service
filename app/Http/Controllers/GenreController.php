@@ -22,6 +22,7 @@ class GenreController extends Controller
      */
     public function create($id)
     {
+        if (!session('user') || session('user')->plan_id != 3) return abort('403');  
         $genres = Genre::all();
         $movie = Movie::findorfail($id);
 

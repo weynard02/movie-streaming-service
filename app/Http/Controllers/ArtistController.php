@@ -14,6 +14,7 @@ class ArtistController extends Controller
      */
     public function index()
     {
+        if (!session('user') || session('user')->plan_id != 3) return abort('403');  
         $artists = Artist::all()->sortBy('name');
         return view('admin.artist.index', compact('artists'));
     }
@@ -23,6 +24,7 @@ class ArtistController extends Controller
      */
     public function create($id)
     {
+        if (!session('user') || session('user')->plan_id != 3) return abort('403');  
         $artists = Artist::all();
         $movie = Movie::findorfail($id);
 
@@ -92,6 +94,7 @@ class ArtistController extends Controller
      */
     public function edit($id)
     {
+        if (!session('user') || session('user')->plan_id != 3) return abort('403');  
         $artist = Artist::findorfail($id);
 
         return view('admin.artist.edit', compact('artist'));
