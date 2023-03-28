@@ -16,7 +16,8 @@ class WatchlistController extends Controller
     {
         $user = User::findorfail(session('user')->id);
         $watchlist = Watchlist::where('user_id', '=', session('user')->id)->get();
-        return view('watchlist.index', compact('user', 'watchlist'));
+        $movies = $user->movie;
+        return view('watchlist.index', compact('user', 'watchlist', 'movies'));
     }
 
     /**
@@ -24,7 +25,12 @@ class WatchlistController extends Controller
      */
     public function create()
     {
-        $movies = Movie::all();
+        if (session('user')->plan_id == 1) {
+            $movies = Movie::where('paid', '=', 0)->get();
+        } else {
+            $movies = Movie::all();
+        }
+        
         return view('watchlist.create', compact('movies'));
     }
 
@@ -33,7 +39,20 @@ class WatchlistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'movie_id' => 'required',
+        ],
+        [
+            'movie_id.required' => 'Movie can\'t be empty',
+        ]);
+        
+        Watchlist::create([
+            'movie_id' => $request->movie_id,
+            'user_id' => session('user')->id,
+            'order' => count(Watchlist::where('user_id', '=', session('user')->id)->get()) + 1,
+        ]);
+
+        return redirect('/watchlist')->with('pesan', 'New movie successfully added!');
     }
 
     /**
@@ -41,9 +60,6 @@ class WatchlistController extends Controller
      */
     public function show(string $id)
     {
-        $user = User::find(session('user')->id);
-        $watchlist = Watchlist::where('user_id', '=', session('user')->id);
-        return view('watchlist.show', compact('user', 'watchlist'));
     }
 
     /**
@@ -51,7 +67,7 @@ class WatchlistController extends Controller
      */
     public function edit(watchlist $watchlist)
     {
-        //
+        
     }
 
     /**
@@ -67,6 +83,6 @@ class WatchlistController extends Controller
      */
     public function destroy(watchlist $watchlist)
     {
-        //
+        Watchlist::where('user_id', '=', session('user')->id)->delete();
     }
 }
