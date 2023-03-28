@@ -33,7 +33,7 @@ Route::get('/', DashboardController::class)->middleware('auth');
 
 Route::get('/watchlist', [WatchlistController::class, 'index']);
 Route::get('/watchlist/create', [WatchlistController::class, 'create']);
-Route::delete('/watchlist', [WatchlistController::class, 'destroyPivot']);
+Route::delete('/watchlist/{user_id}/{movie_id}', [WatchlistController::class, 'destroyPivot']);
 Route::post('/watchlist', [WatchlistController::class, 'store']);
 
 Route::get('/movie', [MovieController::class, 'index']);
