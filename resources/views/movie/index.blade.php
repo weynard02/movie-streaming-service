@@ -44,7 +44,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $i->name }}</h5>
                                 <p class="card-text">{{ $i->studio }}</p>
-                                <a href="/admin/{{ $i->id }}" class="btn btn-primary">View</a>
+                                <a href="/movie/{{ $i->id }}" class="btn btn-primary">View</a>
                             </div>
                         </div>
                     </div>
