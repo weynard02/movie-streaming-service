@@ -1,13 +1,16 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MyController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\WatchlistController;
+use App\Models\Movie;
+use App\Models\Watchlist;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -28,9 +31,16 @@ Route::post('/dologin', [AuthController::class, 'dologin']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/', DashboardController::class)->middleware('auth');
 
-Route::get('/my', MyController::class);
+Route::get('/watchlist', [WatchlistController::class, 'index']);
+Route::get('/watchlist/create', [WatchlistController::class, 'create']);
+Route::get('/watchlist/{watchlist_id}', [WatchlistController::class, 'show']);
+Route::delete('/watchlist/{watchlist_id}', [WatchlistController::class, 'destroy']);
+Route::get('/watchlist/{watchlist_id}/edit', [WatchlistController::class, 'edit']);
+Route::put('/watchlist/{watchlist_id}', [WatchlistController::class, 'update']);
+Route::post('/watchlist', [WatchlistController::class, 'store']);
 
-
+Route::get('/movie', [MovieController::class, 'index']);
+Route::get('/movie/{movie_id}', [MovieController::class, 'show']);
 
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/create', [AdminController::class, 'create']);
