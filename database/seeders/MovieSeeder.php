@@ -21,13 +21,13 @@ class MovieSeeder extends Seeder
     // release_date
     // image
     // paid
-        $movie = array("Spider-Man: Homecoming", "The Avengers", "Suzume no Tojimari");
-        $link = array("https://www.youtube.com/watch?v=rk-dF1lIbIg", "https://www.youtube.com/watch?v=eOrNdBpGMv8", "https://www.youtube.com/watch?v=6R6q2fAp2n4");
-        $studio = array("SONY", "Marvel Studios", "CoMix Wave Films");
-        $release_date = array("2017-07-07", "2012-05-04", "2023-03-08");
-        $image = array("images/homecoming.jpg", "images/avengers.jpg", "images/suzume.jpg");
-        $paid = array(0, 1, 1);
-        $tags = array("marvel,action,spiderman,tom holland,mcu", "marvel,action,avengers,mcu,robert,rdj", "anime,romance,mystery,supernatural");
+        $movie = array("Spider-Man: Homecoming", "The Avengers", "Suzume no Tojimari", "Star Wars: Episode IV - A New Hope");
+        $link = array("https://www.youtube.com/watch?v=rk-dF1lIbIg", "https://www.youtube.com/watch?v=eOrNdBpGMv8", "https://www.youtube.com/watch?v=6R6q2fAp2n4", "https://www.youtube.com/watch?v=L-_xHEv0l-w");
+        $studio = array("SONY", "Marvel Studios", "CoMix Wave Films", "Lucasfilm");
+        $release_date = array("2017-07-07", "2012-05-04", "2023-03-08", '1977-05-25');
+        $image = array("images/homecoming.jpg", "images/avengers.jpg", "images/suzume.jpg", 'images/star-wars.jpg');
+        $paid = array(0, 1, 1, 0);
+        $tags = array("marvel,action,spiderman,tom holland,mcu", "marvel,action,avengers,mcu,robert,rdj", "anime,romance,mystery,supernatural", "war,space,technology,action,retro");
         $len = count($movie);
         for($i=0;$i<$len;$i++) {
             Movie::create([
