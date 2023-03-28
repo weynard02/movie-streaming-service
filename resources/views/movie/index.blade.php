@@ -7,9 +7,11 @@
             </div>
         @endif
         @if ($isSearch)
-            <div class="header my-5 py-2 bg-info my-5">
-                <h2 class="heading text-dark">{{ strtoupper($genreName) }}</h2>
-            </div>
+            @if ($genreName)
+                <div class="header my-5 py-2 bg-info my-5">
+                    <h2 class="heading text-dark">{{ strtoupper($genreName) }}</h2>
+                </div>
+            @endif
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @foreach ($movies as $i)
                     @if (session('user') && session('user')->plan_id == 1 && $i->paid == 1)
