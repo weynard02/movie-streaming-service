@@ -36,10 +36,11 @@ class MovieController extends Controller
                 return view('movie.index', compact('isSearch', 'movies', 'genreName'));
             }
 
+            $genreName = $searchQuery;
             $movies = Movie::where('name', 'like', '%' . request('search') . '%')
                 ->orWhere('tags', 'like', '%' . request('search') . '%')
                 ->get();
-            return view('movie.index', compact('isSearch', 'movies'));
+            return view('movie.index', compact('isSearch', 'movies', 'genreName'));
         } else {
             $isSearch = false;
             $movies = Movie::all();
