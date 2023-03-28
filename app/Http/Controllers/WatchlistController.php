@@ -67,7 +67,6 @@ class WatchlistController extends Controller
      */
     public function edit(watchlist $watchlist)
     {
-        
     }
 
     /**
@@ -83,6 +82,13 @@ class WatchlistController extends Controller
      */
     public function destroy(watchlist $watchlist)
     {
-        Watchlist::where('user_id', '=', session('user')->id)->delete();
+    }
+
+    public function destroyPivot($user_id, $movie_id)
+    {
+        $data = Watchlist::where('user_id', '=', $user_id)->where('movie_id', '=', $movie_id);
+        $data->delete();
+
+        return redirect('/watchlist')->with('pesan', 'Deleted successfully');
     }
 }

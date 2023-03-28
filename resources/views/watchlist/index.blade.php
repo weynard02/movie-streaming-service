@@ -14,9 +14,6 @@
                 <a class="btn btn-primary" href="/watchlist/edit"> Edit Watchlist </a>
             </div>
         </div>
-        <div class="row my-5">
-
-        </div>
         <div class="header my-5 py-2 bg-info">
             <h2 class="text-dark">{{ $user->name }}'s Watchlist</h2>
         </div>
@@ -29,6 +26,11 @@
                             <div class="ms-2 me-auto">
                                 {{ $movie->name }}
                             </div>
+                            <form action='/watchlist' method="delete" enctype="multipart/form-data">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                            </form>
                         </li>
                     @endforeach
                 </ul>
