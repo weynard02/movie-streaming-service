@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\watchlist;
+use App\Models\User;
+use App\Models\Watchlist;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 
 class WatchlistController extends Controller
@@ -12,7 +14,9 @@ class WatchlistController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::findorfail(session('user')->id);
+        $watchlist = Watchlist::where('user_id', '=', session('user')->id)->get();
+        return view('watchlist.index', compact('user', 'watchlist'));
     }
 
     /**
@@ -20,7 +24,8 @@ class WatchlistController extends Controller
      */
     public function create()
     {
-        //
+        $movies = Movie::all();
+        return view('watchlist.create', compact('movies'));
     }
 
     /**
@@ -34,9 +39,11 @@ class WatchlistController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(watchlist $watchlist)
+    public function show(string $id)
     {
-        //
+        $user = User::find(session('user')->id);
+        $watchlist = Watchlist::where('user_id', '=', session('user')->id);
+        return view('watchlist.show', compact('user', 'watchlist'));
     }
 
     /**
