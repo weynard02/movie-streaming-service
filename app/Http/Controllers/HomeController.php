@@ -24,8 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = User::latest()->first();
-        session(['user'=> $user]); //set session variable
-        return redirect('/')->with('pesan', 'Account registered successfully!');
+        if (!session('user')) {
+            $user = User::latest()->first();
+            session(['user'=> $user]); //set session variable
+            return redirect('/')->with('pesan', 'Account registered successfully!');
+        }
+        return redirect('/');
     }
 }
