@@ -12,7 +12,7 @@ class Watchlist extends Model
     protected $table = "watchlists";
     protected $fillable = ['user_id', 'movie_id', 'order'];
 
-    public function usermade() {
-        return $this->belongsToMany(Usermade::class);
+    public function user() {
+        return $this->belongsToMany(User::class);
     }
 }
