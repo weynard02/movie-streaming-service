@@ -1,51 +1,42 @@
 @extends('master')
 @section('content')
-<div class="container">
-    @if (session('pesan'))
-		<div class="alert alert-success">
-			{{ session('pesan') }}
-		</div>
-	@endif
-    <div class="row mb-3 grid gap-0 column-gap-3">
-        <div class="col">
-            <div class="row">
-                <a class="btn btn-info" href="/admin/create"> Add Movie </a>
+    <div class="container">
+        @if (session('pesan'))
+            <div class="alert alert-success">
+                {{ session('pesan') }}
             </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <a class="btn btn-warning" href="/admin/artist"> Artists Menu </a>
+        @endif
+        <div class="row mb-3 grid gap-0 column-gap-3">
+            <div class="col">
+                <div class="row">
+                    <a class="btn btn-info" href="/admin/create"> Add Movie </a>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="row justify-content-center mb-3">
-        <div class="col-md-6">
-            <form action="/admin">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search..." name="search" value = "{{ request('search') }}">
-                <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
-            </div>
-            </form>
-        </div>
-    </div>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        @foreach($movies as $i)
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('storage/'.$i->image) }}" alt="{{ asset('images/alt.png') }}" class="card-img-top" height=400>
-                <div class="card-body">
-                    <h5 class="card-title">{{ $i->name }}</h5>
-                    <p class="card-text">{{ $i->studio }}</p>
-                    <form action='/admin/{{$i->id}}' method="post" enctype="multipart/form-data">
-                        @csrf
-                        @method('delete')
-                        <a href="/admin/{{$i->id}}" class="btn btn-primary">View</a>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+            <div class="col">
+                <div class="row">
+                    <a class="btn btn-warning" href="/admin/artist"> Artists Menu </a>
                 </div>
             </div>
         </div>
-        @endforeach
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            @foreach ($movies as $i)
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ asset('storage/' . $i->image) }}" alt="{{ asset('images/alt.png') }}"
+                            class="card-img-top" height=400>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $i->name }}</h5>
+                            <p class="card-text">{{ $i->studio }}</p>
+                            <form action='/admin/{{ $i->id }}' method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('delete')
+                                <a href="/admin/{{ $i->id }}" class="btn btn-primary">View</a>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
-</div>
 @endsection
