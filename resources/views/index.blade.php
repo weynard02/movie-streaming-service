@@ -26,8 +26,8 @@
                 @endforeach
             </div>
         @else
-            <div class="header my-5 py-2 bg-info">
-                <h2 class="heading text-dark">NEW</h2>
+            <div class="header my-5 py-2 bg-info rounded bg-opacity-25">
+                <h2 class="heading text-dark ms-4">NEW</h2>
             </div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @foreach ($newMovies as $movie)
@@ -48,8 +48,8 @@
                 @endforeach
             </div>
             @for ($i = 0; $i < count($genres); $i++)
-                <div class="header my-5 py-2 bg-info">
-                    <h2 class="heading text-dark">{{ Str::upper($genres[$i]->name) }}</h2>
+                <div class="header my-5 py-2 bg-info rounded bg-opacity-25">
+                    <h2 class="heading text-dark ms-4">{{ Str::upper($genres[$i]->name) }}</h2>
                 </div>
                 <div class="row row-cols-1 row-cols-md-4 g-4">
                     @foreach ($genres[$i]->movie as $movie)
