@@ -11,8 +11,8 @@
                 <a class="btn btn-primary" href="/watchlist/create"> Add to Watchlist </a>
             </div>
         </div>
-        <div class="header my-5 py-2 bg-info">
-            <h2 class="text-dark">{{ $user->name }}'s Watchlist</h2>
+        <div class="header my-5 py-2 bg-info rounded bg-opacity-25">
+            <h2 class="text-dark ms-4">{{ $user->name }}'s Watchlist</h2>
         </div>
         <div class="card-body">
             <p class="card-text">

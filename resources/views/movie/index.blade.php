@@ -8,8 +8,8 @@
         @endif
         @if ($isSearch)
             @if ($genreName)
-                <div class="header my-5 py-2 bg-info my-5">
-                    <h2 class="heading text-dark">{{ strtoupper($genreName) }}</h2>
+                <div class="header my-5 py-2 bg-info rounded bg-opacity-25">
+                    <h2 class="heading text-dark ms-4">{{ strtoupper($genreName) }}</h2>
                 </div>
             @endif
             <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -31,8 +31,8 @@
                 @endforeach
             </div>
         @else
-            <div class="header my-5 py-2 bg-info my-5">
-                <h2 class="heading text-dark">ALL MOVIES</h2>
+            <div class="header my-5 py-2 bg-info rounded bg-opacity-25">
+                <h2 class="heading text-dark ms-4">ALL MOVIES</h2>
             </div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @foreach ($movies as $i)
