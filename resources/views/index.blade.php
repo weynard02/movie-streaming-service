@@ -51,22 +51,24 @@
                 <div class="header my-5">
                     <h2 class="heading text-dark">{{ Str::upper($genres[$i]->name) }}</h2>
                 </div>
-                @foreach ($genres[$i]->movie as $movie)
-                    @if (session('user') && session('user')->plan_id == 1 && $movie->paid == 1)
-                        @continue
-                    @endif
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="{{ asset('storage/' . $movie->image) }}" alt="{{ asset('images/alt.png') }}"
-                                class="card-img-top" height=400>
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $movie->name }}</h5>
-                                <p class="card-text">{{ $movie->studio }}</p>
-                                <a href="/movie/{{ $movie->id }}" class="btn btn-primary">View</a>
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    @foreach ($genres[$i]->movie as $movie)
+                        @if (session('user') && session('user')->plan_id == 1 && $movie->paid == 1)
+                            @continue
+                        @endif
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{ asset('storage/' . $movie->image) }}" alt="{{ asset('images/alt.png') }}"
+                                    class="card-img-top" height=400>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $movie->name }}</h5>
+                                    <p class="card-text">{{ $movie->studio }}</p>
+                                    <a href="/movie/{{ $movie->id }}" class="btn btn-primary">View</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             @endfor
         @endif
     </div>
