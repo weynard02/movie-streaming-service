@@ -11,7 +11,7 @@ Aplikasi Laravel ini merupakan aplikasi layanan streaming movie yang di mana use
 ## Petunjuk Penggunaan:
 1. melakukan `php artisan serve` untuk mendapatkan localhost
 2. melakukan `php artisan storage:link` untuk menghubungkan storage
-
+3. Jika pada login, muncul error coba melakukan `composer require laravel/ui`
 
 
 
