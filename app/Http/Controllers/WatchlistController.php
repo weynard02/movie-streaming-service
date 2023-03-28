@@ -40,7 +40,7 @@ class WatchlistController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'movie_id' => 'required|unique:watchlists,movie_id,user_id',
+            'movie_id' => 'required|unique:watchlists,movie_id,NULL,id,user_id,'.session('user')->id,
         ],
         [
             'movie_id.required' => 'Movie can\'t be empty',

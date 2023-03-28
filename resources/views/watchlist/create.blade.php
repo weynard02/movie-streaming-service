@@ -1,5 +1,10 @@
 @extends('master')
 @section('content')
+    @error('movie_id')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+    @enderror
     <h1 align=center> Add Movie</h1>
     <div class="card-body">
         <form action="/watchlist" method="post" enctype="multipart/form-data">
