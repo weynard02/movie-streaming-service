@@ -1,66 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# fp-camin-alpro-kelompok8
+# Movie Streaming Service 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+```
+5025211014 - Alexander Weynard Samsico
+5025211213 - Richie Seputro
+```
+Aplikasi Laravel ini merupakan aplikasi layanan streaming movie yang di mana user dapat menonton movie-movie tersebut serta beberapa detail seperti Artist dan Genre. User yang berperan admin dapat juga melakukan CRUD pada movie dan artist tersebut.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Petunjuk Penggunaan:
+Setelah melakukan create project dan clone repo:
+1. Buatlah database dan sesuaikan namanya dengan `.env`
+2. Lakukan `composer require laravel/ui`
+3. Lakukan `npm install` dan `npm run build`
+4. Lakukan migrasi dengan `php artisan migrate:refresh --seed`
+5. Lakukan `php artisan serve` untuk mendapatkan localhost
+6. Lakukan `php artisan storage:link` untuk menghubungkan storage
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### Mode Admin
+1. Tekan menu Admin\
+![image](https://user-images.githubusercontent.com/90879937/227697700-148928a5-7187-441b-9911-19e5ea8022c9.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. Kemudian menemukan halaman sebagai berikut\
+![image](https://user-images.githubusercontent.com/90879937/228526499-8341df66-c949-423f-b2cb-13dc8506b0c1.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ada beberapa fitur yang bisa diakses:
+<ol>
+    <li> <b>Search bar</b>: mencari movie </li>
+    <li> <b>Add Movie</b>: digunakan untuk menambahkan movie </li>
+    <li> <b>Artist Menu</b>: menampilkan semua artist </li>
+    <li> <b>View</b>: menampilkan movie secara detail </li>
+    <li> <b>Delete</b>: membuang movie dari aplikasi</li>
+</ol>
+ 
+ ### Add Movie
+ Untuk menambahkan movie, diharapkan untuk mengisi title, studio, link, release date, gambar thumbnail, dan genre utama.
+ Paid movie digunakan untuk mengetahui apakah movie ini berbayar atau tidak.
+ Tags dapat berguna untuk pencarian movie.
+ ![image](https://user-images.githubusercontent.com/90879937/227697941-5d5d96a9-3bbc-4d09-b3bd-bbab3e385c4c.png)
 
-## Laravel Sponsors
+### Arist Menu
+Untuk menampilkan artist dengan birthdatenya. Admin dapat mengedit nama atau birthdate serta menghapus artist tersebut dari database (*Jika artist tersebut terdaftar dalam movie, maka data artist tersebut hilang dari movie itu*)
+![image](https://user-images.githubusercontent.com/90879937/227715485-38448f7e-4533-4c67-b218-3a75eafb06a6.png)
+Edit Artist:
+![image](https://user-images.githubusercontent.com/90879937/227698105-cd67a881-183f-4f81-a500-19e656b1dda8.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### View
+Menampilkan movie tersebut serta beberapa detail lengkapnya seperti tags, para cast, dan genre-genrenya.
+![image](https://user-images.githubusercontent.com/90879937/227698164-99d4732c-6783-411f-b4d5-3d93a0655f2b.png)
+![image](https://user-images.githubusercontent.com/90879937/227698217-5306e8f8-c5c1-456c-8733-5ef1fa0d1f8d.png)
 
-### Premium Partners
+Fitur-fitur pada View sebagai berikut:
+<ol>
+    <li> <b>Edit</b>: digunakan untuk mengedit movie detailnya </li>
+    <li> <b>Delete</b>: membuang movie dari aplikasi </li>
+    <li> <b>Add Cast</b>: menambahkan artist yang ada di movie itu </li>
+    <li> <b>Add Genre</b>: menambahkan genre pada movie itu</li>
+    <li> <b>Remove</b>: Menghapus artist/genre dari movie itu (<i>tidak menghapus data masternya</i>)</li>
+</ol>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Add Cast
+Ada dua opsi dalam penambahan cast
+1. Memilih artist dari yang sudah ada dalam database
+2. Menambahkan artist yang belum ada dalam database tersebut (*memasukan data artist yang baru*)
+![image](https://user-images.githubusercontent.com/90879937/227698513-69e4e8dd-b468-4228-9a28-ef544fe91121.png)
