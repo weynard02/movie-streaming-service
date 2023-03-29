@@ -124,6 +124,7 @@ tombol "Remove".
 ![image](https://user-images.githubusercontent.com/90879937/228526499-8341df66-c949-423f-b2cb-13dc8506b0c1.png)
 
 Ada beberapa fitur yang bisa diakses:
+
 <ol>
     <li> <b>Search bar</b>: mencari movie </li>
     <li> <b>Add Movie</b>: digunakan untuk menambahkan movie </li>
@@ -137,22 +138,29 @@ Ada beberapa fitur yang bisa diakses:
  Untuk menambahkan movie, diharapkan untuk mengisi title, studio, link, release date, gambar thumbnail, dan genre utama.
  Paid movie digunakan untuk mengetahui apakah movie ini berbayar atau tidak.
  Tags dapat berguna untuk pencarian movie.
+
  ![image](https://user-images.githubusercontent.com/90879937/227697941-5d5d96a9-3bbc-4d09-b3bd-bbab3e385c4c.png)
 
-### Arist Menu
+### Artist Menu
 
 Untuk menampilkan artist dengan birthdatenya. Admin dapat mengedit nama atau birthdate serta menghapus artist tersebut dari database (*Jika artist tersebut terdaftar dalam movie, maka data artist tersebut hilang dari movie itu*)
+
 ![image](https://user-images.githubusercontent.com/90879937/227715485-38448f7e-4533-4c67-b218-3a75eafb06a6.png)
+
 Edit Artist:
+
 ![image](https://user-images.githubusercontent.com/90879937/227698105-cd67a881-183f-4f81-a500-19e656b1dda8.png)
 
 ### View
 
 Menampilkan movie tersebut serta beberapa detail lengkapnya seperti tags, para cast, dan genre-genrenya.
+
 ![image](https://user-images.githubusercontent.com/90879937/227698164-99d4732c-6783-411f-b4d5-3d93a0655f2b.png)
+
 ![image](https://user-images.githubusercontent.com/90879937/227698217-5306e8f8-c5c1-456c-8733-5ef1fa0d1f8d.png)
 
 Fitur-fitur pada View sebagai berikut:
+
 <ol>
     <li> <b>Edit</b>: digunakan untuk mengedit movie detailnya </li>
     <li> <b>Delete</b>: membuang movie dari aplikasi </li>
@@ -167,4 +175,5 @@ Ada dua opsi dalam penambahan cast
 
 1. Memilih artist dari yang sudah ada dalam database
 2. Menambahkan artist yang belum ada dalam database tersebut (*memasukan data artist yang baru*)
+
 ![image](https://user-images.githubusercontent.com/90879937/227698513-69e4e8dd-b468-4228-9a28-ef544fe91121.png)
