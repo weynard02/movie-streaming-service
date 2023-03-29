@@ -9,10 +9,13 @@ Aplikasi Laravel ini merupakan aplikasi layanan streaming movie yang di mana use
 
 
 ## Petunjuk Penggunaan:
-1. melakukan `php artisan serve` untuk mendapatkan localhost
-2. melakukan `php artisan storage:link` untuk menghubungkan storage
-3. Jika pada login, muncul error coba melakukan `composer require laravel/ui`
-
+Setelah melakukan create project dan clone repo:
+1. Buatlah database dan sesuaikan namanya dengan `.env`
+2. Lakukan `composer require laravel/ui`
+3. Lakukan `npm install` dan `npm run build`
+4. Lakukan migrasi dengan `php artisan migrate:refresh --seed`
+5. Lakukan `php artisan serve` untuk mendapatkan localhost
+6. Lakukan `php artisan storage:link` untuk menghubungkan storage
 
 
 
@@ -21,7 +24,7 @@ Aplikasi Laravel ini merupakan aplikasi layanan streaming movie yang di mana use
 ![image](https://user-images.githubusercontent.com/90879937/227697700-148928a5-7187-441b-9911-19e5ea8022c9.png)
 
 2. Kemudian menemukan halaman sebagai berikut\
-![image](https://user-images.githubusercontent.com/90879937/227715457-c83f3162-342d-43b4-983a-6c0f7f1906f1.png)
+![image](https://user-images.githubusercontent.com/90879937/228526499-8341df66-c949-423f-b2cb-13dc8506b0c1.png)
 
 
 Ada beberapa fitur yang bisa diakses:
