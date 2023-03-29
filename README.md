@@ -147,7 +147,7 @@ Untuk menampilkan artist dengan birthdatenya. Admin dapat mengedit nama atau bir
 
 ![image](https://user-images.githubusercontent.com/90879937/227715485-38448f7e-4533-4c67-b218-3a75eafb06a6.png)
 
-Edit Artist:
+### Edit Artist:
 
 ![image](https://user-images.githubusercontent.com/90879937/227698105-cd67a881-183f-4f81-a500-19e656b1dda8.png)
 
@@ -177,3 +177,8 @@ Ada dua opsi dalam penambahan cast
 2. Menambahkan artist yang belum ada dalam database tersebut (*memasukan data artist yang baru*)
 
 ![image](https://user-images.githubusercontent.com/90879937/227698513-69e4e8dd-b468-4228-9a28-ef544fe91121.png)
+
+### Add Genre
+Pilih genre dari pilihan yang ada
+![image](https://user-images.githubusercontent.com/90879937/228584009-47aa0a92-e627-4f3d-b3a0-778a7de73345.png)
+
