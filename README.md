@@ -118,7 +118,7 @@ tombol "Remove".
 ## Mode Admin
 
 1. Tekan menu Admin\
-![image](https://user-images.githubusercontent.com/90879937/227697700-148928a5-7187-441b-9911-19e5ea8022c9.png)
+![image](https://user-images.githubusercontent.com/90879937/228586671-93ce3de6-9334-4710-b3d7-53e36dc81845.png)
 
 2. Kemudian menemukan halaman sebagai berikut\
 ![image](https://user-images.githubusercontent.com/90879937/228526499-8341df66-c949-423f-b2cb-13dc8506b0c1.png)
@@ -139,25 +139,24 @@ Ada beberapa fitur yang bisa diakses:
  Paid movie digunakan untuk mengetahui apakah movie ini berbayar atau tidak.
  Tags dapat berguna untuk pencarian movie.
 
- ![image](https://user-images.githubusercontent.com/90879937/227697941-5d5d96a9-3bbc-4d09-b3bd-bbab3e385c4c.png)
+ ![image](https://user-images.githubusercontent.com/90879937/228585843-63857a93-0948-4ab8-bec7-2e3bc1d5e678.png)
 
 ### Artist Menu
 
 Untuk menampilkan artist dengan birthdatenya. Admin dapat mengedit nama atau birthdate serta menghapus artist tersebut dari database (*Jika artist tersebut terdaftar dalam movie, maka data artist tersebut hilang dari movie itu*)
 
-![image](https://user-images.githubusercontent.com/90879937/227715485-38448f7e-4533-4c67-b218-3a75eafb06a6.png)
+![image](https://user-images.githubusercontent.com/90879937/228585936-9bf94f3a-c6f7-4ca8-bbb9-1b3ce69191fa.png)
 
 ### Edit Artist:
 
-![image](https://user-images.githubusercontent.com/90879937/227698105-cd67a881-183f-4f81-a500-19e656b1dda8.png)
+![image](https://user-images.githubusercontent.com/90879937/228586003-caac9b76-754b-43ca-ab08-ee5d712cbc84.png)
 
 ### View
 
 Menampilkan movie tersebut serta beberapa detail lengkapnya seperti tags, para cast, dan genre-genrenya.
 
-![image](https://user-images.githubusercontent.com/90879937/227698164-99d4732c-6783-411f-b4d5-3d93a0655f2b.png)
-
-![image](https://user-images.githubusercontent.com/90879937/227698217-5306e8f8-c5c1-456c-8733-5ef1fa0d1f8d.png)
+![image](https://user-images.githubusercontent.com/90879937/228586110-67345b1e-1dba-41a0-a96f-a9b3937f8837.png)
+![image](https://user-images.githubusercontent.com/90879937/228586166-a0cf95c2-8802-4cf7-a442-8a23818a3968.png)
 
 Fitur-fitur pada View sebagai berikut:
 
