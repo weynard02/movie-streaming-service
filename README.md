@@ -1,6 +1,6 @@
 # fp-camin-alpro-kelompok8
 
-# Movie Streaming Service
+## Movie Streaming Service
 
 | NRP | Nama |
 |-----|------|
@@ -19,6 +19,101 @@ Setelah melakukan create project dan clone repo:
 4. Lakukan migrasi dengan `php artisan migrate:refresh --seed`
 5. Lakukan `php artisan serve` untuk mendapatkan localhost
 6. Lakukan `php artisan storage:link` untuk menghubungkan storage
+
+## Autentikasi
+
+Sebelum pengguna dapat menggunakan layanan *streaming service*, user harus login
+maupun register sebuah akun terlebih dahulu. Jika user tidak memiliki session
+token, ketika user membuka endpoint '/' atau root dari page, akan di-*redirect*
+ke halaman untuk login/register.
+
+Berikut tampilan dari halaman login:
+
+![Halaman Login](./doc-assets/login.png)
+
+Terlihat bahwa ada 2 field yang perlu diisi, yaitu Email dan Password.
+
+Ketika mencoba login menggunakan detail yang salah / tidak terdaftar, akan
+ditampilkan:
+
+![Halaman Login Wrong](./doc-assets/login-unknown-account.png)
+
+![Halaman Login Failed](./doc-assets/login-failed.png)
+
+Jika user belum memiliki akun pada platform, maka user dapat melakukan register.
+Berikut tampilan dari laman register:
+
+![Halaman Register](./doc-assets/register.png)
+
+Terlihat bahwa ada 5 field yang perlu diisi, yaitu Nama, Email, Password,
+Password Confirmation, dan Plan.
+
+Setelah mencoba register dengan mengisi form, user akan di-*redirect* ke laman
+*home* atau *root*:
+
+![Halaman Register New](./doc-assets/register-new-account.png)
+
+![Halaman Register Berhasil](./doc-assets/register-successful.png)
+
+## Listing Movie
+
+Movie yang tersedia pada platform dapat dilihat pada view Home maupun melalui
+Movie List. User dapat mencapai laman Movie List dengan cara meng-klik link
+"Movie List" pada navbar.
+
+![Halaman Movie](./doc-assets/movie.png)
+
+User juga dapat melihat detil film dengan meng-klik tombol view pada setiap
+card movie yang tertampil.
+
+![Halaman Movie View](./doc-assets/movie-view.png)
+
+![Halaman Movie View 2](./doc-assets/movie-view2.png)
+
+## Search by Genre
+
+User dapat melihat daftar film dengan genre tertentu dengan meng-klik link
+pada navbar bertuliskan "Genre". Setelah user meng-klik link tersebut, akan
+tampil pop-up yang menampilkan genre-genre yang bisa di-*search*.
+
+![Halaman Search by Genre](doc-assets/genre.png)
+
+Contoh search by genre adalah seperti di bawah (genre Romance):
+
+![Halaman Search by Genre 2](doc-assets/search-by-genre.png)
+
+Contoh search by keyword ("Kimi"):
+
+![Halaman Search by Genre 3](doc-assets/search.png)
+
+## Watchlist
+
+User dapat melihat dan mengedit watchlist mereka. View watchlist dapat dicapai
+dengan meng-klik link "Watchlist" pada navbar.
+
+Berikut tampilan awal seorang user baru yang belum menambahkan entri ke
+watchlist:
+
+![Watchlist](./doc-assets/watchlist-initial.png)
+
+Untuk menambahkan entri watchlist baru, user dapat meng-klik tombol "Add to
+Watchlist". Setelah tombol ditekan akan muncul tampilan sebagai berikut:
+
+![Watchlist 2](doc-assets/watchlist-add.png)
+
+Pada tampilan itu user dapat memilih dari daftar movie yang *eligible* untuk ia
+lihat untuk dimasukkan ke dalam watchlist-nya.
+
+Setelah menambahkan entri ke watchlist, tampilan akan menjadi seperti ini:
+
+![Watchlist 3](doc-assets/watchlist-1-item.png)
+
+![Watchlist 4](doc-assets/watchlist-2-item.png)
+
+User juga dapat melakukan penghapusan terhadap entri watchlist dengan meng-klik
+tombol "Remove".
+
+![Watchlist 5](doc-assets/watchlist-delete.png)
 
 ## Mode Admin
 
@@ -73,6 +168,3 @@ Ada dua opsi dalam penambahan cast
 1. Memilih artist dari yang sudah ada dalam database
 2. Menambahkan artist yang belum ada dalam database tersebut (*memasukan data artist yang baru*)
 ![image](https://user-images.githubusercontent.com/90879937/227698513-69e4e8dd-b468-4228-9a28-ef544fe91121.png)
-
-## Mode User Normal
-
