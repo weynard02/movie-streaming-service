@@ -169,6 +169,11 @@ Fitur-fitur pada View sebagai berikut:
     <li> <b>Remove</b>: Menghapus artist/genre dari movie itu (<i>tidak menghapus data masternya</i>)</li>
 </ol>
 
+### Edit Movie
+Admin dapat mengganti data pada movie tersebut 
+(*dengan catatan: perlu mengupload thumbnail ulang dan memastikan apakah movie tersebut dalam status Paid*)
+![image](https://user-images.githubusercontent.com/90879937/228584891-5132b35f-2971-43db-8f05-71714d1b7d4e.png)
+
 ### Add Cast
 
 Ada dua opsi dalam penambahan cast
